@@ -1,0 +1,23 @@
+canvas
+{
+  display: block;
+}
+#colors
+{
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 20px;
+}
+#colors li
+{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+#output
+{
+  width: 100%;
+}

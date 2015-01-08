@@ -10900,13 +10900,29 @@ body header .btn-link .fa {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-/* line 1, ../scss/components/_map.scss */
-section.section-map {
-  height: 100%;
+/* line 1, ../scss/components/_colorpicker.scss */
+canvas {
+  display: block;
 }
-/* line 3, ../scss/components/_map.scss */
-section.section-map .map-canvas {
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
+
+/* line 5, ../scss/components/_colorpicker.scss */
+#colors {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 20px;
+}
+
+/* line 12, ../scss/components/_colorpicker.scss */
+#colors li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 20, ../scss/components/_colorpicker.scss */
+#output {
+  width: 100%;
 }

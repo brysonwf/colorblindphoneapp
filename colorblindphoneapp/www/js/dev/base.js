@@ -1,8 +1,9 @@
 jQuery(document).ready(function(){
 
     //app.initialize();
-    MapManager.init();
+    //MapManager.init();
     CameraManager.init();
+    EyeDroperManager.init();
     //DataManager.init();
 
 });

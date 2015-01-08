@@ -45,14 +45,15 @@
                 <!--</ul>-->
             <!--</div>-->
         </header>
-        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-        <img style="display:none;" id="largeImage" src="" />
-        <section class="section-map">
-            <div id="map-canvas" class="map-canvas"></div>
-        </section>
-
+        <img style="display:none;width:100%;height:auto;" id="addedimage" src="" />
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/live/lib.min.js"></script>
         <script type="text/javascript" src="js/live/base.js"></script>
+
+
+        <input type="file" onchange="fileevent(this.files)" />
+        <ul id="colors"></ul>
+        <input type="text" id="output" />
+        <canvas width="500" height="500" id="canvas"></canvas>
     </body>
 </html>
