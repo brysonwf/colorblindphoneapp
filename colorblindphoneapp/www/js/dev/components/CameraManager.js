@@ -35,7 +35,6 @@ var CameraManager = {
             smallImage.src = "data:image/jpeg;base64," + imageData;
         }
 
-
         // Called when a photo is successfully retrieved
         //
         function onPhotoURISuccess(imageURI) {
