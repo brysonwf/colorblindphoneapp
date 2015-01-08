@@ -270,7 +270,7 @@ var app = {
     //app.initialize();
     //MapManager.init();
     CameraManager.init();
-    EyeDroperManager.init();
+//    EyeDroperManager.init();
     //DataManager.init();
 
 });
