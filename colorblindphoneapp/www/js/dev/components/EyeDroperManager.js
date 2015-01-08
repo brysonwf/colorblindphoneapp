@@ -1,4 +1,4 @@
-EyeDroperManager = {
+var EyeDroperManager = {
     init: function(){
 
         var c = document.getElementById("canvas");
