@@ -10903,9 +10903,11 @@ body header .btn-link .fa {
 /* line 1, ../scss/components/_colorpicker.scss */
 canvas {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* line 5, ../scss/components/_colorpicker.scss */
+/* line 7, ../scss/components/_colorpicker.scss */
 #colors {
   display: block;
   margin: 0;
@@ -10913,7 +10915,7 @@ canvas {
   height: 20px;
 }
 
-/* line 12, ../scss/components/_colorpicker.scss */
+/* line 14, ../scss/components/_colorpicker.scss */
 #colors li {
   margin: 0;
   padding: 0;
@@ -10922,7 +10924,7 @@ canvas {
   height: 20px;
 }
 
-/* line 20, ../scss/components/_colorpicker.scss */
+/* line 22, ../scss/components/_colorpicker.scss */
 #output {
   width: 100%;
 }
