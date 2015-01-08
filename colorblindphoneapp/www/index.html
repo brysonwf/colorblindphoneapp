@@ -1,59 +1,101 @@
+
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <link rel="stylesheet" type="text/css" href="css/base.css" />
-        <title>GPS</title>
-    </head>
-    <body>
-        <header class="text-right">
-            <button type="button" class="btn btn-link btn-open capture-library">
-                <i class="fa fa-folder-open fa-2x"></i>
-            </button>
-            <button type="button" class="btn btn-link btn-camera capture-photo">
-                <i class="fa fa-camera fa-3x"></i>
-            </button>
-            <!--<div class="btn-group dropup btn-group-camera pull-right">-->
-                <!--<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">-->
-                    <!--Options-->
-                <!--</button>-->
-                <!--<ul class="dropdown-menu" role="menu">-->
-                    <!--<li><a class="capture-editable" href="#" >Capture Editable Photo</a></li>-->
-                    <!--<li><a class="capture-album" href="#" >From Photo Album</a></li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        </header>
-        <img style="display:none;width:100%;height:auto;" id="addedimage" src="" />
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/live/lib.min.js"></script>
-        <script type="text/javascript" src="js/live/base.js"></script>
+<head>
+    <title>color picking</title>
+    <style>
+        canvas
+        {
+            display: block;
+        }
+        #colors
+        {
+            display: block;
+            margin: 0;
+            padding: 0;
+            height: 20px;
+        }
+        #colors li
+        {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        #output
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<input type="file" onchange="fileevent(this.files)" />
+<ul id="colors"></ul>
+<input type="text" id="output" />
+<canvas width="500" height="500" id="canvas"></canvas>
+<script>
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
 
+    var sc = document.createElement("canvas");
+    var sctx = sc.getContext("2d");
+    var colors = [];
+    var ui_colors = document.getElementById("colors");
 
-        <input type="file" onchange="fileevent(this.files)" />
-        <ul id="colors"></ul>
-        <input type="text" id="output" />
-        <canvas width="500" height="500" id="canvas"></canvas>
-    </body>
+    var out = document.getElementById("output");
+    var data;
+
+    c.addEventListener("click", function (event) {
+        var pt = [window.scrollX + event.clientX - this.offsetLeft, window.scrollY + event.clientY - this.offsetTop];
+        var index = 4 * (pt[1] * c.width + pt[0]);
+        var color = 'rgba(' + data[index].toString() + ', ' + data[index + 1].toString() + ', ' + data[index + 2].toString() + ', ' + (data[index + 3] / 255).toString() + ')';
+        colors.push(color);
+        var item = document.createElement("li");
+        item.style.backgroundColor = color;
+        ui_colors.appendChild(item);
+
+        out.value = "['" + colors.join("', '") + "']";
+    });
+
+    var onload = function () {
+        var width = ctx.canvas.width = sctx.canvas.width = this.width;
+        var height = ctx.canvas.height = sctx.canvas.height = this.height;
+        sctx.drawImage(this, 0, 0);
+        data = sctx.getImageData(0, 0, width, height).data;
+
+        ctx.drawImage(this, 0, 0);
+    }
+
+    var fileevent = function (files) {
+        var filter = /image.*/;
+        for (var i = 0, numFiles = files.length; i < numFiles; i++) {
+            var file = files[i];
+            if (!file.type.match(filter)) continue;
+
+            var img = document.createElement("img");
+
+            var reader = new FileReader();
+            reader.onload = (function (aImg, aCtx, sCtx) {
+                return function (e) {
+                    aImg.onload = onload;
+                    aImg.src = e.target.result;
+                };
+            })(img, ctx, sctx);
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6804458-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</body>
 </html>
