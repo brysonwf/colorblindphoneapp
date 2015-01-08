@@ -22,8 +22,8 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
         <link rel="stylesheet" type="text/css" href="css/base.css" />
         <title>GPS</title>
     </head>
@@ -45,13 +45,8 @@
                 <!--</ul>-->
             <!--</div>-->
         </header>
-
-
-        <!--<input type="file" onchange="fileevent(this.files)" />-->
-
-        <ul id="colors"></ul>
-        <input type="text" id="output" />
-        <canvas width="100%" height="auto" id="canvas"></canvas>
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+        <img style="display:none;" id="largeImage" src="" />
 
         <script type="text/javascript" src="js/live/lib.min.js"></script>
         <script type="text/javascript" src="js/live/base.js"></script>
