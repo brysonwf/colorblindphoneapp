@@ -23,7 +23,7 @@ var CameraManager = {
 
             // Get image handle
             //
-            var smallImage = document.getElementById('smallImage');
+            var smallImage = document.getElementById('canvas');
 
             // Unhide image elements
             //
@@ -43,7 +43,7 @@ var CameraManager = {
 
             // Get image handle
             //
-            var largeImage = document.getElementById('largeImage');
+            var largeImage = document.getElementById('canvas');
 
             // Unhide image elements
             //
