@@ -23,7 +23,7 @@ var CameraManager = {
 
             // Get image handle
             //
-            var smallImage = document.getElementById('canvas');
+            var smallImage = document.getElementById('smallImage');
 
             // Unhide image elements
             //
@@ -35,6 +35,7 @@ var CameraManager = {
             smallImage.src = "data:image/jpeg;base64," + imageData;
         }
 
+
         // Called when a photo is successfully retrieved
         //
         function onPhotoURISuccess(imageURI) {
@@ -43,7 +44,7 @@ var CameraManager = {
 
             // Get image handle
             //
-            var largeImage = document.getElementById('canvas');
+            var largeImage = document.getElementById('largeImage');
 
             // Unhide image elements
             //
