@@ -136,25 +136,25 @@ var CameraManager = {
             data = sctx.getImageData(0, 0, width, height).data;
 
             ctx.drawImage(this, 0, 0);
-            }
+        }
 
         var fileevent = function (files) {
             var filter = /image.*/;
             for (var i = 0, numFiles = files.length; i < numFiles; i++) {
-            var file = files[i];
-            if (!file.type.match(filter)) continue;
+                var file = files[i];
+                if (!file.type.match(filter)) continue;
 
-            var img = document.createElement("img");
+                var img = document.createElement("img");
 
-            var reader = new FileReader();
-            reader.onload = (function (aImg, aCtx, sCtx) {
-            return function (e) {
-                aImg.onload = onload;
-                aImg.src = e.target.result;
-            };
-            })(img, ctx, sctx);
-            reader.readAsDataURL(file);
-        }
+                var reader = new FileReader();
+                reader.onload = (function (aImg, aCtx, sCtx) {
+                    return function (e) {
+                        aImg.onload = onload;
+                        aImg.src = e.target.result;
+                    };
+                })(img, ctx, sctx);
+                reader.readAsDataURL(file);
+            }
         }
     }
 };jQuery(document).ready(function(){
@@ -162,7 +162,7 @@ var CameraManager = {
     //app.initialize();
     //MapManager.init();
     CameraManager.init();
-//    EyeDroperManager.init();
+    EyeDroperManager.init();
     //DataManager.init();
 
 });
