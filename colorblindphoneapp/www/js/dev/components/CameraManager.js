@@ -23,7 +23,7 @@ var CameraManager = {
 
             // Get image handle
             //
-            var smallImage = document.getElementById('smallImage');
+            var smallImage = document.getElementById('canvas');
 
             // Unhide image elements
             //
@@ -44,7 +44,7 @@ var CameraManager = {
 
             // Get image handle
             //
-            var largeImage = document.getElementById('largeImage');
+            var largeImage = document.getElementById('canvas');
 
             // Unhide image elements
             //
@@ -59,7 +59,6 @@ var CameraManager = {
         // A button will call this function
         //
         function capturePhoto() {
-            alert('stuff');
             // Take picture using device camera and retrieve image as base64-encoded string
             navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
                 destinationType: destinationType.DATA_URL });
