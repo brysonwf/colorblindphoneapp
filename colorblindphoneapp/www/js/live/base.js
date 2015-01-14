@@ -160,7 +160,7 @@ var CameraManager = {
         $('.file-upload').change(function(){
             fileevent(this.files);
         });
-        
+
     }
 };jQuery(document).ready(function(){
 
