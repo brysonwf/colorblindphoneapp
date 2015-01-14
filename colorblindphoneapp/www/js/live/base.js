@@ -35,7 +35,6 @@ var CameraManager = {
             smallImage.src = "data:image/jpeg;base64," + imageData;
         }
 
-
         // Called when a photo is successfully retrieved
         //
         function onPhotoURISuccess(imageURI) {
@@ -106,62 +105,21 @@ var CameraManager = {
 ;var EyeDroperManager = {
     init: function(){
 
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
+        $('img').on('click', function(e){
 
-        var sc = document.createElement("canvas");
-        var sctx = sc.getContext("2d");
-        var colors = [];
-        var ui_colors = document.getElementById("colors");
-
-        var out = document.getElementById("output");
-        var data;
-
-        c.addEventListener("click", function (event) {
-            var pt = [window.scrollX + event.clientX - this.offsetLeft, window.scrollY + event.clientY - this.offsetTop];
-            var index = 4 * (pt[1] * c.width + pt[0]);
-            var color = 'rgba(' + data[index].toString() + ', ' + data[index + 1].toString() + ', ' + data[index + 2].toString() + ', ' + (data[index + 3] / 255).toString() + ')';
-            colors.push(color);
-            var item = document.createElement("li");
-            item.style.backgroundColor = color;
-            ui_colors.appendChild(item);
-
-            out.value = "['" + colors.join("', '") + "']";
-        });
-
-        var onload = function () {
-            var width = ctx.canvas.width = sctx.canvas.width = this.width;
-            var height = ctx.canvas.height = sctx.canvas.height = this.height;
-            sctx.drawImage(this, 0, 0);
-            data = sctx.getImageData(0, 0, width, height).data;
-
-            ctx.drawImage(this, 0, 0);
-        }
-
-        var fileevent = function (files) {
-            alert('happening');
-            var filter = /image.*/;
-            for (var i = 0, numFiles = files.length; i < numFiles; i++) {
-                var file = files[i];
-                if (!file.type.match(filter)) continue;
-
-                var img = document.createElement("img");
-                alert('image created');
-
-                var reader = new FileReader();
-                reader.onload = (function (aImg, aCtx, sCtx) {
-                    return function (e) {
-                        aImg.onload = onload;
-                        aImg.src = e.target.result;
-                    };
-                })(img, ctx, sctx);
-                reader.readAsDataURL(file);
+            if(!this.canvas) {
+                this.canvas = $('<canvas />')[0];
+                this.canvas.width = this.width;
+                this.canvas.height = this.height;
+                this.canvas.getContext('2d').drawImage(this, 0, 0, this.width, this.height);
             }
-        }
 
-        $('.file-upload').change(function(){
-            fileevent(this.files);
+            var pixelData = this.canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
+
+            $('#output').html('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
+
         });
+
 
     }
 };jQuery(document).ready(function(){

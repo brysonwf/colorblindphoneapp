@@ -36,7 +36,14 @@
                 <i class="fa fa-camera fa-3x"></i>
             </button>
         </header>
-        <img id="canvas" src="" />
+        <input type="file" class="file-upload" />
+        <!--<input type="file" onchange="fileevent(this.files)" />-->
+        <ul id="colors"></ul>
+        <div class="form-group">
+            <label cl>Current Color:</label>
+            <input type="text" id="output" class="form-control" />
+        </div>
+        <canvas id="canvas"></canvas>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/live/lib.min.js"></script>
