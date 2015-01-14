@@ -3,6 +3,8 @@ var EyeDroperManager = {
 
         $('img').on('click', function(e){
 
+            alert('this');
+
             if(!this.canvas) {
                 this.canvas = $('<canvas />')[0];
                 this.canvas.width = this.width;
