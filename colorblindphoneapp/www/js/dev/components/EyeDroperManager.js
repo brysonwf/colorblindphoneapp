@@ -22,7 +22,7 @@ var EyeDroperManager = {
             ui_colors.appendChild(item);
 
             out.value = "['" + colors.join("', '") + "']";
-            });
+        });
 
         var onload = function () {
             var width = ctx.canvas.width = sctx.canvas.width = this.width;
@@ -51,5 +51,10 @@ var EyeDroperManager = {
                 reader.readAsDataURL(file);
             }
         }
+
+        $('.file-upload').change(function(){
+            fileevent(this.files);
+        });
+
     }
 }
