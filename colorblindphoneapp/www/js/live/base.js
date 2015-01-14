@@ -33,6 +33,7 @@ var CameraManager = {
             // The in-line CSS rules are used to resize the image
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
+            EyeDroperManager.init();
         }
 
         // Called when a photo is successfully retrieved
@@ -53,6 +54,7 @@ var CameraManager = {
             // The in-line CSS rules are used to resize the image
             //
             largeImage.src = imageURI;
+            EyeDroperManager.init();
         }
 
         // A button will call this function
@@ -107,6 +109,8 @@ var CameraManager = {
 
         $('img').on('click', function(e){
 
+            alert('this');
+
             if(!this.canvas) {
                 this.canvas = $('<canvas />')[0];
                 this.canvas.width = this.width;
@@ -127,7 +131,6 @@ var CameraManager = {
     //app.initialize();
     //MapManager.init();
     CameraManager.init();
-    EyeDroperManager.init();
     //DataManager.init();
 
 });

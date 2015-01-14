@@ -10890,7 +10890,7 @@ html, body {
 
 /* line 7, ../scss/layout/_layout.scss */
 body header {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 10px;
   z-index: 1;
@@ -10900,31 +10900,8 @@ body header .btn-link .fa {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-/* line 1, ../scss/components/_colorpicker.scss */
-canvas {
-  display: block;
-  width: 100%;
+/* line 1, ../scss/components/_image.scss */
+img {
+  max-width: 100%;
   height: auto;
-}
-
-/* line 7, ../scss/components/_colorpicker.scss */
-#colors {
-  display: block;
-  margin: 0;
-  padding: 0;
-  height: 20px;
-}
-
-/* line 14, ../scss/components/_colorpicker.scss */
-#colors li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-}
-
-/* line 22, ../scss/components/_colorpicker.scss */
-#output {
-  width: 100%;
 }
