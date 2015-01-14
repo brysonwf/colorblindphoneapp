@@ -34,12 +34,14 @@ var EyeDroperManager = {
         }
 
         var fileevent = function (files) {
+            alert('happening');
             var filter = /image.*/;
             for (var i = 0, numFiles = files.length; i < numFiles; i++) {
                 var file = files[i];
                 if (!file.type.match(filter)) continue;
 
                 var img = document.createElement("img");
+                alert('image created');
 
                 var reader = new FileReader();
                 reader.onload = (function (aImg, aCtx, sCtx) {
