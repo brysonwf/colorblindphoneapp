@@ -17,6 +17,7 @@ var CameraManager = {
 
         // Called when a photo is successfully retrieved
         //
+
         function onPhotoDataSuccess(imageData) {
             // Uncomment to view the base64-encoded image data
             // console.log(imageData);
