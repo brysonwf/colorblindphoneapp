@@ -44,9 +44,9 @@ var EyeDroperManager = {
                     //distance function
 //                    testDistance = Math.sqrt((red-colors[k][0])^2 + (green-colors[k][1])^2 + (blue-colors[k][2])^2);
                     testDistance = Math.sqrt(
-                        Math.pow(2,(colors[k][0]-red))
-                        + Math.pow(2,(colors[k][1]-green))
-                        + Math.pow(2,(colors[k][2]-blue))
+                        Math.pow((colors[k][0]-red), 2)
+                        + Math.pow((colors[k][1]-green), 2)
+                        + Math.pow((colors[k][2]-blue), 2)
                     );
 
 
