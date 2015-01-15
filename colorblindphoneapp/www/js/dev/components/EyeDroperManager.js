@@ -30,7 +30,7 @@ var EyeDroperManager = {
                 blue = pixelData[2],
                 alpha = pixelData[3];
 
-//            alert('R: ' + red + 'G: ' + green + 'B: ' + blue + 'A: ' + alpha);
+            alert(red + ', ' + green + ', ' + blue);
 
             var closestColor = 'No Color Selected',
                 testDistance = 0,
@@ -46,6 +46,8 @@ var EyeDroperManager = {
                         + Math.pow(((colors[k][1]-green)*0.59), 2)
                         + Math.pow(((colors[k][2]-blue)*0.11), 2)
                     );
+
+                    alert (testDistance+' < '+closestDistance);
 
                     if (testDistance < closestDistance){
                         alert(k + ' is closer');
