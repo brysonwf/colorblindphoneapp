@@ -149,7 +149,11 @@ var CameraManager = {
 
                     //distance function
 //                    testDistance = Math.sqrt((red-colors[k][0])^2 + (green-colors[k][1])^2 + (blue-colors[k][2])^2);
-                    testDistance = Math.sqrt(((red-colors[k][0])*0.3)^2 + ((green-colors[k][1])*0.59)^2 + ((blue-colors[k][2])*0.11)^2);
+                    testDistance = Math.sqrt(
+                        Math.pow(2,(red-colors[k][0]))
+                        + Math.pow(2,(green-colors[k][1]))
+                        + Math.pow(2,(blue-colors[k][2]))
+                    );
 
 
                     if (testDistance < closestDistance){
