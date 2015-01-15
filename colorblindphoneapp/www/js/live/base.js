@@ -107,6 +107,19 @@ var CameraManager = {
 ;var EyeDroperManager = {
     init: function(){
 
+        //orig 1903 Crayola set
+
+        var colors = {
+            "black"     :   [0, 0, 0],
+            "blue"      :   [31, 117, 254],
+            "brown"     :   [180, 103, 77],
+            "green"     :   [28, 172, 120],
+            "orange"    :   [255, 117, 56],
+            "red"       :   [238, 32, 77],
+            "purple"    :   [146, 110, 174],
+            "yellow"    :   [252, 232, 131]
+        }
+
         $('img').on('click', function(e){
 
             if(!this.canvas) {
@@ -118,7 +131,25 @@ var CameraManager = {
 
             var pixelData = this.canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
 
-            alert('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
+            var red = pixelData[0],
+                green = pixelData[1],
+                blue = pixelData[2],
+                alpha = pixelData[3];
+
+            alert('R: ' + red + 'G: ' + green + 'B: ' + blue + 'A: ' + alpha);
+
+
+            var closestColor = 'No Color Selected';
+
+            //loop through color array
+            for (var k in colors){
+                if (typeof colors[k] !== 'function') {
+                    alert("Key is " + k + ", value is" + colors[k]);
+                }
+            }
+
+            //distance function
+            //d = sqrt((r2-r1)^2 + (g2-g1)^2 + (b2-b1)^2)
 
 //            $('#output').html('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
 
@@ -127,9 +158,6 @@ var CameraManager = {
     }
 };jQuery(document).ready(function(){
 
-    //app.initialize();
-    //MapManager.init();
     CameraManager.init();
-    //DataManager.init();
 
 });
