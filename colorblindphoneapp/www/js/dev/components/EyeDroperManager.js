@@ -39,13 +39,6 @@ var EyeDroperManager = {
             //loop through color array
             for (var k in colors){
                 if (typeof colors[k] !== 'function') {
-//                    alert('testing');
-
-                    alert(colors[k][0]);
-                    alert(colors[k][0]-red);
-                    alert((colors[k][0]-red)*0.3);
-                    alert(Math.pow(((colors[k][0]-red)*0.3), 2));
-
                     //distance function
 //                    testDistance = Math.sqrt((red-colors[k][0])^2 + (green-colors[k][1])^2 + (blue-colors[k][2])^2);
                     testDistance = Math.sqrt(
@@ -54,9 +47,8 @@ var EyeDroperManager = {
                         + Math.pow(((colors[k][2]-blue)*0.11), 2)
                     );
 
-
-
                     if (testDistance < closestDistance){
+                        alert(k + ' is closer');
                         closestColor = k;
                     }
                 }
