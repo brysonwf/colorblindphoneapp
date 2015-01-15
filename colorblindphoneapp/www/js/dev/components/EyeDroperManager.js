@@ -30,22 +30,27 @@ var EyeDroperManager = {
                 blue = pixelData[2],
                 alpha = pixelData[3];
 
-            alert('R: ' + red + 'G: ' + green + 'B: ' + blue + 'A: ' + alpha);
+//            alert('R: ' + red + 'G: ' + green + 'B: ' + blue + 'A: ' + alpha);
 
 
-            var closestColor = 'No Color Selected';
+            var closestColor = 'No Color Selected',
+                testDistance = 0,
+                closestDistance = 0;
 
             //loop through color array
-            for (var k in colors){
-                if (typeof colors[k] !== 'function') {
-                    alert("Key is " + k + ", value is" + colors[k]);
+            for (var key in colors){
+                if (typeof colors[key] !== 'function') {
+
+                    //distance function
+                    testDistance = sqrt((red-colors[key][0])^2 + (green-colors[key][1])^2 + (blue-colors[key][2])^2);
+
+                    if (testDistance < closestDistance){
+                        closestColor = key;
+                    }
                 }
             }
 
-            //distance function
-            //d = sqrt((r2-r1)^2 + (g2-g1)^2 + (b2-b1)^2)
-
-//            $('#output').html('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
+            alert(closestColor);
 
         });
 
