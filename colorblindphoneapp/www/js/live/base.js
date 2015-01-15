@@ -150,9 +150,9 @@ var CameraManager = {
                     //distance function
 //                    testDistance = Math.sqrt((red-colors[k][0])^2 + (green-colors[k][1])^2 + (blue-colors[k][2])^2);
                     testDistance = Math.sqrt(
-                        Math.pow((colors[k][0]-red), 2)
-                        + Math.pow((colors[k][1]-green), 2)
-                        + Math.pow((colors[k][2]-blue), 2)
+                        Math.pow(((colors[k][0]-red)*0.3), 2)
+                        + Math.pow(((colors[k][1]-green)*0.59), 2)
+                        + Math.pow(((colors[k][2]-blue)*0.59), 2)
                     );
 
 
