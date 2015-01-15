@@ -59,6 +59,7 @@ var EyeDroperManager = {
 
             alert(closestColor);
 
+
         });
 
     }
