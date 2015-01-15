@@ -107,19 +107,6 @@ var CameraManager = {
 ;var EyeDroperManager = {
     init: function(){
 
-        //orig 1903 Crayola set
-
-        var colors = {
-            "black"     :   [0, 0, 0],
-            "blue"      :   [31, 117, 254],
-            "brown"     :   [180, 103, 77],
-            "green"     :   [28, 172, 120],
-            "orange"    :   [255, 117, 56],
-            "red"       :   [238, 32, 77],
-            "purple"    :   [146, 110, 174],
-            "yellow"    :   [252, 232, 131]
-        }
-
         $('img').on('click', function(e){
 
             if(!this.canvas) {
@@ -165,7 +152,29 @@ var CameraManager = {
 
             alert(closestColor);
 
+
         });
+
+        var colors = {
+            "black"     :   [0, 0, 0],
+            "white"     :   [255, 255, 255],
+            "blue"      :   [0, 0, 255],
+            "brown"     :   [180, 103, 77],
+            "green"     :   [0,128,0],
+            "orange"    :   [255, 117, 56],
+            "red"       :   [255, 0, 0],
+            "purple"    :   [128,0,128],
+            "yellow"    :   [255,255,0],
+            "lime"      :   [0, 255, 0],
+            "cyan"      :   [0, 255, 255],
+            "magenta"   :   [255, 0, 255],
+            "Silver"    :   [192, 192, 192],
+            "Gray"      :   [128,128,128],
+            "Maroon"    :   [128,128,128],
+            "Olive"     :   [128,128,0],
+            "teal"      :   [0,128,128],
+            "navy"      :   [0,0,128]
+        }
 
     }
 };jQuery(document).ready(function(){
