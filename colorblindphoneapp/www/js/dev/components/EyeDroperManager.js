@@ -51,6 +51,7 @@ var EyeDroperManager = {
 
                     if (testDistance < closestDistance){
                         alert(k + ' is closer');
+                        closestDistance = testDistance;
                         closestColor = k;
                     }
                 }

@@ -136,7 +136,7 @@ var CameraManager = {
                 blue = pixelData[2],
                 alpha = pixelData[3];
 
-//            alert('R: ' + red + 'G: ' + green + 'B: ' + blue + 'A: ' + alpha);
+            alert(red + ', ' + green + ', ' + blue);
 
             var closestColor = 'No Color Selected',
                 testDistance = 0,
@@ -153,8 +153,11 @@ var CameraManager = {
                         + Math.pow(((colors[k][2]-blue)*0.11), 2)
                     );
 
+                    alert (testDistance+' < '+closestDistance);
+
                     if (testDistance < closestDistance){
                         alert(k + ' is closer');
+                        closestDistance = testDistance;
                         closestColor = k;
                     }
                 }
