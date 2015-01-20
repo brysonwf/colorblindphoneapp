@@ -68,10 +68,11 @@ var CameraManager = {
 
             var $canvas = $('#canvas');
 
-            if ($canvas.width() > $canvas.height()){
+            if ($canvas.width > $canvas.height){
                 $canvas.addClass('rotate90');
             }
         }
+
 
         // A button will call this function
         //
