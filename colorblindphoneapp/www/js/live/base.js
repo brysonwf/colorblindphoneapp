@@ -38,7 +38,6 @@ var CameraManager = {
             jQuery(smallImage).panzoom();
         }
 
-
         // Called when a photo is successfully retrieved
         //
         function onPhotoURISuccess(imageURI) {
