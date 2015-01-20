@@ -34,6 +34,7 @@ var CameraManager = {
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
             EyeDroperManager.init();
+            $('.btn-eyedropper').toggleClass('active');
         }
 
 
@@ -56,6 +57,7 @@ var CameraManager = {
             //
             largeImage.src = imageURI;
             EyeDroperManager.init();
+            $('.btn-eyedropper').toggleClass('active');
         }
 
         // A button will call this function

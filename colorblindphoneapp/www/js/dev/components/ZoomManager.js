@@ -15,5 +15,21 @@ var ZoomManager = {
             }
 
         });
+
+        $('.btn-eyedropper').click(function(){
+
+            $this = $(this);
+            $canvas = $('#canvas');
+
+            $this.toggleClass('active');
+            $('.btn-zoomtoggle').toggleClass('active');
+
+            if ($this.hasClass('active')){
+                $canvas.panzoom("disable");
+            }else{
+                $canvas.panzoom();
+            }
+
+        });
     }
 }
