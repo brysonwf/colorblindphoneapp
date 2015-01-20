@@ -10915,8 +10915,8 @@ body header .btn-link .fa {
   color: rgba(0, 0, 0, 0.2);
   text-shadow: 0;
 }
-/* line 33, ../scss/layout/_layout.scss */
-body header .btn-link.active {
+/* line 34, ../scss/layout/_layout.scss */
+body header .btn-link.active .fa {
   color: #000;
 }
 

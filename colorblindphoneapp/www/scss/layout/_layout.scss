@@ -31,7 +31,9 @@ body{
         text-shadow:0;
       }
       &.active{
-        color:#000;
+        .fa{
+          color:#000;
+        }
       }
     }
   }

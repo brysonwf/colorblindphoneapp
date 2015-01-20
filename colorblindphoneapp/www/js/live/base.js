@@ -201,9 +201,8 @@ var CameraManager = {
             $this = $(this);
             $canvas = $('#canvas');
 
-            $this.toggleClass('active');
-            $('.btn-eyedropper').toggleClass('active');
-            $('.btn-zoomtoggle').toggleClass('active');
+            $this.addClass('active');
+            $('.btn-eyedropper').removeClass('active');
 
             if ($this.hasClass('active')){
                 $canvas.panzoom("disable");
@@ -218,9 +217,8 @@ var CameraManager = {
             $this = $(this);
             $canvas = $('#canvas');
 
-            $this.toggleClass('active');
-            $('.btn-zoomtoggle').toggleClass('active');
-            $('.btn-eyedropper').toggleClass('active');
+            $this.addClass('active');
+            $('.btn-zoomtoggle').removeClass('active');
 
             if ($this.hasClass('active')){
                 $canvas.panzoom("disable");
