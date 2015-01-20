@@ -9796,7 +9796,6 @@ button.close {
   content: "";
 }
 
-
 /* line 306, ../scss/lib/font-awesome/_icons.scss */
 .fa-eraser:before {
   content: "";
@@ -10914,19 +10913,20 @@ body header .btn-primary .fa {
 /* line 29, ../scss/layout/_layout.scss */
 body header .btn-link .fa {
   color: rgba(0, 0, 0, 0.2);
-  text-shadow: none;
+  text-shadow: 0;
 }
 /* line 33, ../scss/layout/_layout.scss */
 body header .btn-link.active {
   color: #000;
 }
-/* line 35, ../scss/layout/_layout.scss */
-body header .btn-link.active .fa {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
-}
 
-/* line 1, ../scss/components/_image.scss */
+/* line 1, ../scss/components/_components.scss */
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* line 6, ../scss/components/_components.scss */
+.rotate90 {
+  transform: rotate(90deg);
 }

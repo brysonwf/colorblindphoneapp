@@ -1,1 +1,8 @@
-@import "image";
+img{
+  max-width: 100%;
+  height:auto;
+}
+
+.rotate90{
+  transform: rotate(90deg);
+}

@@ -35,6 +35,13 @@ var CameraManager = {
             smallImage.src = "data:image/jpeg;base64," + imageData;
             EyeDroperManager.init();
             $('.btn-eyedropper').toggleClass('active');
+
+
+            var $canvas = $('#canvas');
+
+            if ($canvas.width() > $canvas.height()){
+                $canvas.addClass('rotate90');
+            }
         }
 
 
@@ -58,6 +65,12 @@ var CameraManager = {
             largeImage.src = imageURI;
             EyeDroperManager.init();
             $('.btn-eyedropper').toggleClass('active');
+
+            var $canvas = $('#canvas');
+
+            if ($canvas.width() > $canvas.height()){
+                $canvas.addClass('rotate90');
+            }
         }
 
         // A button will call this function
