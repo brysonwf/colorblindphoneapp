@@ -10899,10 +10899,18 @@ body header {
 body header .btn-link .fa {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
-/* line 19, ../scss/layout/_layout.scss */
-body header .btn-link.active .fa {
-  color: rgba(0, 0, 0, 0.3);
+/* line 21, ../scss/layout/_layout.scss */
+body header .btn-inactive .fa {
+  color: rgba(0, 0, 0, 0.2);
   text-shadow: none;
+}
+/* line 25, ../scss/layout/_layout.scss */
+body header .btn-inactive.active {
+  color: #000;
+}
+/* line 27, ../scss/layout/_layout.scss */
+body header .btn-inactive.active .fa {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 /* line 1, ../scss/components/_image.scss */
