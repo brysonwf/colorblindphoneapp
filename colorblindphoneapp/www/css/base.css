@@ -10895,21 +10895,32 @@ body header {
   right: 10px;
   z-index: 1;
 }
-/* line 15, ../scss/layout/_layout.scss */
-body header .btn-link .fa {
+/* line 13, ../scss/layout/_layout.scss */
+body header .btn {
+  outline: none !important;
+}
+/* line 17, ../scss/layout/_layout.scss */
+body header .btn-primary {
+  color: #428bca !important;
+  background-color: transparent !important;
+  border: transparent !important;
+  box-shadow: none !important;
+}
+/* line 23, ../scss/layout/_layout.scss */
+body header .btn-primary .fa {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
-/* line 21, ../scss/layout/_layout.scss */
-body header .btn-inactive .fa {
+/* line 29, ../scss/layout/_layout.scss */
+body header .btn-link .fa {
   color: rgba(0, 0, 0, 0.2);
   text-shadow: none;
 }
-/* line 25, ../scss/layout/_layout.scss */
-body header .btn-inactive.active {
+/* line 33, ../scss/layout/_layout.scss */
+body header .btn-link.active {
   color: #000;
 }
-/* line 27, ../scss/layout/_layout.scss */
-body header .btn-inactive.active .fa {
+/* line 35, ../scss/layout/_layout.scss */
+body header .btn-link.active .fa {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
 

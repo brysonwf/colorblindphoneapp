@@ -10,14 +10,22 @@ body{
     right:10px;
     z-index: 1;
 
-    .btn-link{
+    .btn{
+      outline: none !important;
+    }
+
+    .btn-primary{
+      color:#428bca !important;
+      background-color: transparent !important;
+      border: transparent !important;
+      box-shadow:none !important;
 
       .fa{
         text-shadow: 0 1px 1px rgba(0,0,0,.8);
       }
     }
 
-    .btn-inactive{
+    .btn-link{
       .fa{
         color: rgba(0,0,0,.2);
         text-shadow:none;
