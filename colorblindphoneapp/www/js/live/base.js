@@ -204,7 +204,7 @@ var CameraManager = {
             $this.addClass('active');
             $('.btn-eyedropper').removeClass('active');
 
-            $canvas.panzoom();
+            $canvas.panzoom("enable");
 
         });
 
