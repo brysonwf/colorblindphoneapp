@@ -7,6 +7,7 @@ var ZoomManager = {
 
             $this.toggleClass('active');
             $('.btn-eyedropper').toggleClass('active');
+            $('.btn-zoomtoggle').toggleClass('active');
 
             if ($this.hasClass('active')){
                 $canvas.panzoom("disable");
@@ -23,6 +24,7 @@ var ZoomManager = {
 
             $this.toggleClass('active');
             $('.btn-zoomtoggle').toggleClass('active');
+            $('.btn-eyedropper').toggleClass('active');
 
             if ($this.hasClass('active')){
                 $canvas.panzoom("disable");

@@ -73,7 +73,7 @@ var CameraManager = {
             }
         }
 
-        
+
         // A button will call this function
         //
         function capturePhoto() {
@@ -203,6 +203,7 @@ var CameraManager = {
 
             $this.toggleClass('active');
             $('.btn-eyedropper').toggleClass('active');
+            $('.btn-zoomtoggle').toggleClass('active');
 
             if ($this.hasClass('active')){
                 $canvas.panzoom("disable");
@@ -219,6 +220,7 @@ var CameraManager = {
 
             $this.toggleClass('active');
             $('.btn-zoomtoggle').toggleClass('active');
+            $('.btn-eyedropper').toggleClass('active');
 
             if ($this.hasClass('active')){
                 $canvas.panzoom("disable");
