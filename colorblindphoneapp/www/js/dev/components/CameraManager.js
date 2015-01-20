@@ -34,7 +34,10 @@ var CameraManager = {
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
             EyeDroperManager.init();
+
+            jQuery(smallImage).panzoom();
         }
+
 
         // Called when a photo is successfully retrieved
         //
@@ -55,6 +58,7 @@ var CameraManager = {
             //
             largeImage.src = imageURI;
             EyeDroperManager.init();
+            jQuery(largeImage).panzoom();
         }
 
         // A button will call this function
