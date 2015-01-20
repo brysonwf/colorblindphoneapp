@@ -41,6 +41,7 @@ var CameraManager = {
 
             if ($canvas.width() > $canvas.height()){
                 $canvas.addClass('rotate90');
+                alert('rotate90');
             }
         }
 
@@ -70,6 +71,7 @@ var CameraManager = {
 
             if ($canvas.width > $canvas.height){
                 $canvas.addClass('rotate90');
+                alert('rotate90');
             }
         }
 
