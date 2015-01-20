@@ -14,6 +14,11 @@ body{
 
       .fa{
         text-shadow: 0 1px 1px rgba(0,0,0,.8);
+
+        &.active{
+          color: rgba(0,0,0,.3);
+          text-shadow:none;
+        }
       }
     }
   }

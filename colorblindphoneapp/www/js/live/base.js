@@ -34,9 +34,8 @@ var CameraManager = {
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
             EyeDroperManager.init();
-
-            jQuery(smallImage).panzoom();
         }
+
 
         // Called when a photo is successfully retrieved
         //
@@ -57,7 +56,6 @@ var CameraManager = {
             //
             largeImage.src = imageURI;
             EyeDroperManager.init();
-            jQuery(largeImage).panzoom();
         }
 
         // A button will call this function
@@ -179,6 +177,24 @@ var CameraManager = {
             "navy"      :   [0,0,128]
         }
 
+    }
+};var ZoomManager = {
+    init: function(){
+        $('.btn-zoomtoggle').click(function(){
+
+            $this = $(this);
+            $canvas = $('#canvas');
+
+            $this.toggleClass('active');
+            $('.btn-eyedropper').toggleClass('active');
+
+            if ($this.hasClass('active')){
+                $canvas.panzoom("disable");
+            }else{
+                $canvas.panzoom();
+            }
+
+        });
     }
 };jQuery(document).ready(function(){
 

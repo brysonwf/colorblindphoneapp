@@ -34,7 +34,6 @@ var CameraManager = {
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
             EyeDroperManager.init();
-            jQuery('#canvas').panzoom();
         }
 
 
@@ -57,7 +56,6 @@ var CameraManager = {
             //
             largeImage.src = imageURI;
             EyeDroperManager.init();
-            jQuery('#canvas').panzoom();
         }
 
         // A button will call this function

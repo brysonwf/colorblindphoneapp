@@ -10899,6 +10899,11 @@ body header {
 body header .btn-link .fa {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
+/* line 18, ../scss/layout/_layout.scss */
+body header .btn-link .fa.active {
+  color: rgba(0, 0, 0, 0.3);
+  text-shadow: none;
+}
 
 /* line 1, ../scss/components/_image.scss */
 img {
