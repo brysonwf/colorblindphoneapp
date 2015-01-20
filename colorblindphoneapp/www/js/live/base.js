@@ -204,7 +204,11 @@ var CameraManager = {
             $this.addClass('active');
             $('.btn-eyedropper').removeClass('active');
 
-            $canvas.panzoom("enable");
+            if ($canvas.panzoom("isDisabled")){
+                $canvas.panzoom("enable");
+            }else{
+                $canvas.panzoom();
+            }
 
         });
 
@@ -216,7 +220,9 @@ var CameraManager = {
             $this.addClass('active');
             $('.btn-zoomtoggle').removeClass('active');
 
-            $canvas.panzoom("disable");
+            if (!$canvas.panzoom("isDisabled")){
+                $canvas.panzoom("disable");
+            }
 
         });
     }
