@@ -38,11 +38,6 @@ var CameraManager = {
 
 
             var $canvas = $('#canvas');
-
-            if ($canvas.width() > $canvas.height()){
-                $canvas.addClass('rotate90');
-                alert('rotate90');
-            }
         }
 
 
@@ -66,13 +61,6 @@ var CameraManager = {
             largeImage.src = imageURI;
             EyeDroperManager.init();
             $('.btn-eyedropper').toggleClass('active');
-
-            var $canvas = $('#canvas');
-
-            if ($canvas.width > $canvas.height){
-                $canvas.addClass('rotate90');
-                alert('rotate90');
-            }
         }
 
 
@@ -104,21 +92,30 @@ var CameraManager = {
         // Called if something bad happens.
         //
         function onFail(message) {
-            alert('Failed because: ' + message);
+            //alert('Failed because: ' + message);
         }
+
+        function rotateImage(){
+            var $canvas = $('#canvas');
+
+            $canvas.load(function(){
+
+                if ($canvas.width() > $canvas.height()){
+                    $canvas.addClass('rotate90');
+//                    alert('rotating image');
+                }
+            });
+        }
+
 
 
         $('.capture-photo').on('click',function(){
             capturePhoto();
-        });
-        $('.capture-editable').on('click',function(){
-            capturePhotoEdit();
+            rotateImage();
         });
         $('.capture-library').on('click',function(){
             getPhoto(pictureSource.PHOTOLIBRARY);
-        });
-        $('.capture-album').on('click',function(){
-            getPhoto(pictureSource.SAVEDPHOTOALBUM);
+            rotateImage();
         });
 
     }
